@@ -1,0 +1,7 @@
+*.exe
+
+*.yaml
+*.log
+
+test/
+build/
