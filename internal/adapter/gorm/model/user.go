@@ -7,8 +7,7 @@ import (
 
 type User struct {
 	gorm.Model
-	Name string `json:"name" gorm:"not null;unique"`
-
+	Name    string  `json:"name" gorm:"not null;unique"`
 	Channel Channel `gorm:"foreignKey:ChannelID; references:ID"`
 }
 

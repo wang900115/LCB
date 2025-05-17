@@ -13,8 +13,8 @@ func NewChannelUsecase(channelRepo irepository.ChannelRepository) *ChannelUsecas
 	return &ChannelUsecase{ChannelRepo: channelRepo}
 }
 
-func (c *ChannelUsecase) CreateChannel() (entities.Channel, error) {
-	return c.ChannelRepo.CreateChannel()
+func (c *ChannelUsecase) CreateChannel(channel entities.Channel) (entities.Channel, error) {
+	return c.ChannelRepo.CreateChannel(channel)
 }
 
 func (c *ChannelUsecase) QueryChannel() ([]entities.Channel, error) {

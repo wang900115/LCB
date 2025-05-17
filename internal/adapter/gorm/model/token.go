@@ -6,9 +6,6 @@ import (
 )
 
 type TokenClaims struct {
-	UserID    uint `json:"user_id"`
-	ChannelID uint `json:"channel_id"`
-
 	Username    string `json:"user_name"`
 	Channelname string `json:"channel_name"`
 
@@ -17,12 +14,8 @@ type TokenClaims struct {
 
 func (t TokenClaims) ToDomain() entities.TokenClaims {
 	return entities.TokenClaims{
-		UserID:    t.UserID,
-		ChannelID: t.ChannelID,
-
 		Username:    t.Username,
 		Channelname: t.Channelname,
-
-		ExpiredAt: t.ExpiresAt.Unix(),
+		ExpiredAt:   t.ExpiresAt.Unix(),
 	}
 }
